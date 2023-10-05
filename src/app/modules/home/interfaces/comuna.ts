@@ -1,6 +1,7 @@
 import { Provincia } from "./provincia";
 
 export interface Comuna {
+  comuna: ComunaClass;
 }
 
 export interface ComunaClass {

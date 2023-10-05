@@ -10,6 +10,7 @@ import { HomeService } from '../../services/home.service';
 export class HomePageComponent implements OnInit {
 
   comunas: Comuna[] = [];
+  selectedValue: string = "";
 
   constructor( private homeService: HomeService ){
 
@@ -18,7 +19,7 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
     this.homeService.getComunas().subscribe(
       respComunas => {
-        console.log(respComunas);
+        this.comunas = respComunas;
       }
     );
   }

@@ -1,5 +1,5 @@
 <div class="form-home" >
-  <!-- <mat-form-field>
+  <mat-form-field>
     <mat-label>Nombre</mat-label>
     <input matInput>
   </mat-form-field>
@@ -13,9 +13,10 @@
   </mat-form-field>
   <mat-form-field>
     <mat-label>Comuna</mat-label>
-    <mat-select>
-      <mat-select-trigger></mat-select-trigger>
-      <mat-option></mat-option>
+    <mat-select [(ngModel)]="selectedValue" name="comuna">
+      <mat-option *ngFor="let comuna of comunas" [value]="comuna.comuna.code">
+        {{comuna.comuna.name}}
+      </mat-option>
     </mat-select>
-  </mat-form-field> -->
+  </mat-form-field>
 </div>

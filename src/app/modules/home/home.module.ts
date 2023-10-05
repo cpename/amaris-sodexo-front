@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MaterialModule } from 'src/app/material/material.module';
-import { FormBuilder } from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 
 
 
@@ -11,7 +11,9 @@ import { FormBuilder } from "@angular/forms";
     HomePageComponent
   ],
   imports: [
-    CommonModule, MaterialModule
+    CommonModule,
+    MaterialModule,
+    FormsModule
   ]
 })
 export class HomeModule {
