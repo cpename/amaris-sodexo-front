@@ -19,7 +19,4 @@ import { FormsModule } from "@angular/forms";
 export class HomeModule {
 
 
-  comunasArray: string[] = ['Huechuraba', 'Puente Alto', 'Providencia', 'San Bernardo', 'Alto Hospicio'];
-
-
 }
