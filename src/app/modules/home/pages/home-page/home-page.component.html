@@ -1,29 +1,31 @@
 <div class="container" >
-  <mat-form-field>
-    <mat-label>Nombre</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Apellido</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Telefono</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Comuna</mat-label>
-    <mat-select [(ngModel)]="selectedValue" name="comuna">
-      <mat-option *ngFor="let comuna of comunas" [value]="comuna.comuna.code">
-        {{comuna.comuna.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-divider></mat-divider>
-  <div class="container-buttons">
-    <button mat-raised-button color="primary">Guardar</button>
-    <button mat-raised-button color="primary">Buscar</button>
-    <button mat-raised-button color="primary">Editar</button>
-    <button mat-raised-button color="warn">Borrar</button>
-  </div>
+  <form [formGroup]="checkoutForm">
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Apellido</mat-label>
+      <input matInput formControlName="apellido">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Telefono</mat-label>
+      <input matInput formControlName="telefono">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Comuna</mat-label>
+      <mat-select  name="comunaCode"  formControlName="comunaCode">
+        <mat-option *ngFor="let comuna of comunas" [value]="comuna.comuna.code">
+          {{comuna.comuna.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <div class="container-buttons">
+      <button mat-raised-button color="primary">Guardar</button>
+      <button mat-raised-button color="primary" (click)="onSubmit(checkoutForm.value)">Buscar</button>
+      <button mat-raised-button color="primary">Editar</button>
+      <button mat-raised-button color="warn">Borrar</button>
+    </div>
+  </form>
 </div>
