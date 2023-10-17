@@ -20,4 +20,13 @@ export class HomeService {
     return this._httpClient.get<Usuario[]>(`${environment.apiUrl}/usuarios`);
   }
 
+  /**
+   * Llama a la api para guardar al nuevo Usuario.
+   * @param nuevoUsuario<Usuario> nuevo usuario
+   * @returns Observable<Usuario> un observable con los datos del usuario guardado
+   */
+  public saveUsuario(nuevoUsuario: Usuario): Observable<Usuario>{
+    return this._httpClient.post<Usuario>(`${environment.apiUrl}/usuario`, nuevoUsuario);
+  }
+
 }

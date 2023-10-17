@@ -1,7 +1,7 @@
 export interface Usuario {
-    id:        number;
+    id?:        number;
     nombre:    string;
     apellido:  string;
-    telefono:  string;
+    telefono?:  string;
     codComuna: string;
 }

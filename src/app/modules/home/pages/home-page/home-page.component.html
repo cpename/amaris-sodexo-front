@@ -1,5 +1,5 @@
 <div class="container" >
-  <form [formGroup]="checkoutForm">
+  <form [formGroup]="usuarioForm">
     <mat-form-field>
       <mat-label>Nombre</mat-label>
       <input matInput formControlName="nombre">
@@ -22,8 +22,8 @@
     </mat-form-field>
     <mat-divider></mat-divider>
     <div class="container-buttons">
-      <button mat-raised-button color="primary">Guardar</button>
-      <button mat-raised-button color="primary" (click)="onSubmit(checkoutForm.value)">Buscar</button>
+      <button mat-raised-button color="primary" (click)="guardarUsuario()">Guardar</button>
+      <button mat-raised-button color="primary" (click)="buscarUsuario()">Buscar</button>
       <button mat-raised-button color="primary">Editar</button>
       <button mat-raised-button color="warn">Borrar</button>
     </div>
